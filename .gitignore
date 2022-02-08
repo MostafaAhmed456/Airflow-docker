@@ -3,3 +3,5 @@ logs/
 dags/
 database/
 service_account/
+.DS_Store
+.idea/
