@@ -43,7 +43,7 @@ services:
     volumes:
       - ./dags:/opt/airflow/dags
       - /Users/mostafa.ahmed.3/Desktop/Talabat/analytics-airflow-dags/talabat_airflow_utils:/opt/airflow/dags/talabat_airflow_utils
-      - ./service_account/bta---talabat-625dc3f80159.json:/opt/airflow/bta---talabat-625dc3f80159.json
+      - ./service_account:/opt/airflow/service_account
       - ./logs:/opt/airflow/logs
       - ./files:/opt/airflow/files
       - /var/run/docker.sock:/var/run/docker.sock
@@ -78,6 +78,8 @@ services:
         max_attempts: 3
     volumes:
       - ./logs:/opt/airflow/logs
+      -  ./dags:/opt/airflow/dags
+      - /Users/mostafa.ahmed.3/Desktop/Talabat/analytics-airflow-dags/talabat_airflow_utils:/opt/airflow/dags/talabat_airflow_utils
     command: flower
     networks:
       - airflow
@@ -87,7 +89,7 @@ services:
       - .env
     volumes:
       - ./dags:/opt/airflow/dags
-      - ./service_account/bta---talabat-625dc3f80159.json:/opt/airflow/bta---talabat-625dc3f80159.json
+      - ./service_account:/opt/airflow/service_account
       - /Users/mostafa.ahmed.3/Desktop/Talabat/analytics-airflow-dags/talabat_airflow_utils:/opt/airflow/dags/talabat_airflow_utils
       - ./logs:/opt/airflow/logs
       - ./files:/opt/airflow/files
@@ -106,7 +108,7 @@ services:
       - .env
     volumes:
       - ./dags:/opt/airflow/dags
-      - ./service_account/bta---talabat-625dc3f80159.json:/opt/airflow/bta---talabat-625dc3f80159.json
+      - ./service_account:/opt/airflow/service_account
       - /Users/mostafa.ahmed.3/Desktop/Talabat/analytics-airflow-dags/talabat_airflow_utils:/opt/airflow/dags/talabat_airflow_utils
       - ./logs:/opt/airflow/logs
       - ./files:/opt/airflow/files
